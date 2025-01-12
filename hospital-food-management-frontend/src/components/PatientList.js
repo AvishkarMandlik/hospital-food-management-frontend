@@ -1,21 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import { Table } from 'react-bootstrap';
-import api from '../services/api';
+import api from '../services/api'; // Assuming this is set up correctly.
 
 const PatientList = () => {
   const [patients, setPatients] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchPatients = async () => {
-      const response = await api.get('/patients');
-      setPatients(response.data);
+      try {
+        const response = await api.get('/patients'); // Ensure this path is correct
+        console.log('Fetched patients:', response.data); // Log for debugging
+        setPatients(response.data); // Set the patients to state
+      } catch (err) {
+        console.error('Error fetching patients:', err);
+        setError('Failed to load patient data.'); // Handle errors
+      }
     };
+
     fetchPatients();
-  }, []);
+  }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   return (
     <div className="container mt-5">
       <h2>Patient List</h2>
+      {error && <p className="text-danger">{error}</p>} {/* Show error message */}
       <Table striped bordered hover>
         <thead>
           <tr>
