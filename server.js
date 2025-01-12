@@ -6,6 +6,7 @@ const dietChartRoutes = require('./routes/dietCharts');
 const pantryRoutes = require('./routes/pantry');
 const deliveryRoutes = require('./routes/deliveries');
 const dashboardRoutes = require('./routes/dashboard');
+const path = require('path');
 
 dotenv.config();
 const app = express();
@@ -26,8 +27,11 @@ app.use('/api/pantry', pantryRoutes);
 app.use('/api/deliveries', deliveryRoutes);
 
 app.use('/api/dashboard', dashboardRoutes)
+
+app.use(express.static(path.join(__dirname,"hospital-food-management-frontend", 'build')));
+
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname,"hospital-food-management-frontend", 'build', 'index.html'));
   });
   
 // Start the server
