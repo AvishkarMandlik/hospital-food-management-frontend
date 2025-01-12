@@ -26,5 +26,9 @@ app.use('/api/pantry', pantryRoutes);
 app.use('/api/deliveries', deliveryRoutes);
 
 app.use('/api/dashboard', dashboardRoutes)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
+  
 // Start the server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
