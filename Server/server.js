@@ -18,7 +18,8 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-require('./config/database')();
+const dbConnect = require('./config/database');
+dbConnect();
 
 // Routes
 app.use('/api/patients', patientRoutes);
