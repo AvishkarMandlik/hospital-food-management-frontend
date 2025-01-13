@@ -6,9 +6,10 @@ const dietChartRoutes = require('./routes/dietCharts');
 const pantryRoutes = require('./routes/pantry');
 const deliveryRoutes = require('./routes/deliveries');
 const dashboardRoutes = require('./routes/dashboard');
-const path = require('path');
+// const path = require('path');
 
 dotenv.config();
+mongoose.connect(process.env.MONGO_URI).then(() => console.log('MongoDB connected...'));
 const app = express();
 const PORT = process.env.PORT || 5000;
 const cors = require('cors');
@@ -16,10 +17,6 @@ app.use(cors());
 // app.use(cors({ origin: 'https://your-frontend.netlify.app' }));
 // Middleware
 app.use(express.json());
-
-// Database connection
-const dbConnect = require('./config/database');
-dbConnect();
 
 // Routes
 app.use('/api/patients', patientRoutes);
