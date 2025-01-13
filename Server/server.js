@@ -28,11 +28,12 @@ app.use('/api/deliveries', deliveryRoutes);
 
 app.use('/api/dashboard', dashboardRoutes)
 
-app.use(express.static(path.join(__dirname,"hospital-food-management-frontend", 'build')));
+// app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname,"hospital-food-management-frontend", 'build', 'index.html'));
-  });
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+// });
+
   
 // Start the server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
