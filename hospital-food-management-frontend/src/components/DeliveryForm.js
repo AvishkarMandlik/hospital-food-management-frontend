@@ -15,7 +15,7 @@ const DeliveryForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/deliveries', {
+      const response = await axios.post('/deliveries', {
         mealBox,
         deliveryPersonnel,
         patientId,
@@ -25,6 +25,7 @@ const DeliveryForm = () => {
       });
 
       console.log('Delivery created successfully:', response.data);
+      alert("Delivery created successfully",response.data);
     } catch (error) {
       console.error('Error creating delivery:', error.response ? error.response.data : error.message);
     }
