@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Button, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import api from '../services/api';
 
 const InnerPantryDashboard = () => {
@@ -8,7 +9,7 @@ const InnerPantryDashboard = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const pantryTasksData = await api.get('/tasks');
+      const pantryTasksData = await api.get('/pantry');
       const deliveriesData = await api.get('/deliveries');
 
       setPantryTasks(pantryTasksData.data);
@@ -35,7 +36,7 @@ const InnerPantryDashboard = () => {
             <Card.Body>
               <Card.Title>Deliveries</Card.Title>
               <Card.Text>Total Deliveries: {deliveries.length}</Card.Text>
-              <Button variant="primary">View Deliveries</Button>
+            <Link to="/deliveries"><Button variant="primary">View Deliveries</Button></Link>  
             </Card.Body>
           </Card>
         </Col>
