@@ -15,6 +15,11 @@ const NavigationBar = () => {
             </Link>
           </Nav.Item>
           <Nav.Item>
+            <Link to="/inner-pantry-dashboard" className="nav-link">
+            InnerPantryDashboard
+            </Link>
+          </Nav.Item>
+          <Nav.Item>
             <Link to="/add-patient" className="nav-link">
               Add Patient
             </Link>
@@ -29,11 +34,11 @@ const NavigationBar = () => {
               Add Diet Chart
             </Link>
           </Nav.Item>
-          <Nav.Item>
+          {/* <Nav.Item>
             <Link to="/deliveries" className="nav-link">
               Deliveries
             </Link>
-          </Nav.Item>
+          </Nav.Item> */}
           <Nav.Item>
             <Link to="/add-delivery" className="nav-link">
               Add Delivery
