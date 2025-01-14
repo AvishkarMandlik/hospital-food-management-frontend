@@ -24,7 +24,7 @@ function App() {
         <div className="container mt-4">
           <Routes>
             <Route path="/" element={<PatientList />} />
-            <Route path="/" element={<Dashboard />} />
+            {/* <Route path="/" element={<Dashboard />} /> */}
             <Route path="/add-patient" element={<PatientForm />} />
             <Route path="/diet-charts" element={<DietChartList />} />
             <Route path="/add-diet-chart" element={<DietChartForm />} />
