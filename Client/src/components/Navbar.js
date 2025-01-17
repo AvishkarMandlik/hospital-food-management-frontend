@@ -5,7 +5,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 const NavigationBar = () => {
   return (
     <Navbar bg="primary" variant="dark" expand="lg">
-      <Navbar.Brand href="/">Hospital Food Management</Navbar.Brand>
+      <Navbar.Brand href="/hospital-food-manager-dashboard">Hospital Food Manager Dashboard</Navbar.Brand>
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse id="navbar-nav">
         <Nav className="ml-auto">
@@ -34,14 +34,14 @@ const NavigationBar = () => {
               Add Diet Chart
             </Link>
           </Nav.Item>
-          {/* <Nav.Item>
+          <Nav.Item>
             <Link to="/deliveries" className="nav-link">
-              Deliveries
+              Food Deliveries
             </Link>
-          </Nav.Item> */}
+          </Nav.Item>
           <Nav.Item>
             <Link to="/add-delivery" className="nav-link">
-              Add Delivery
+              Add Food Delivery
             </Link>
           </Nav.Item>
         </Nav>
