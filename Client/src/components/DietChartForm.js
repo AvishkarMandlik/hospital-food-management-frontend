@@ -7,7 +7,7 @@ const DietChartForm = () => {
   const [morningMeal, setMorningMeal] = useState('');
   const [eveningMeal, setEveningMeal] = useState('');
   const [nightMeal, setNightMeal] = useState('');
-  const [instructions, setInstructions] = useState('');
+  const [specialInstructions, setspecialInstructions] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ const DietChartForm = () => {
       morningMeal,
       eveningMeal,
       nightMeal,
-      instructions,
+      specialInstructions,
     };
 
     try {
@@ -69,8 +69,8 @@ const DietChartForm = () => {
           <Form.Label>Special Instructions</Form.Label>
           <Form.Control
             type="text"
-            value={instructions}
-            onChange={(e) => setInstructions(e.target.value)}
+            value={specialInstructions}
+            onChange={(e) => setspecialInstructions(e.target.value)}
           />
         </Form.Group>
         <Button variant="primary" type="submit">

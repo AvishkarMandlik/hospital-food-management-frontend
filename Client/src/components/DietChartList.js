@@ -9,6 +9,7 @@ const DietChartList = () => {
     const fetchDietCharts = async () => {
       const response = await api.get('/diet-charts');
       setDietCharts(response.data);
+      console.log(response.data);
     };
     fetchDietCharts();
   }, []);
@@ -34,7 +35,7 @@ const DietChartList = () => {
               <td>{dietChart.morningMeal}</td>
               <td>{dietChart.eveningMeal}</td>
               <td>{dietChart.nightMeal}</td>
-              <td>{dietChart.instructions}</td>
+              <td>{dietChart.specialInstructions}</td>
               <td>
                 <button className="btn btn-info">Edit</button>
               </td>
